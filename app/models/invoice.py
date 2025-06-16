@@ -14,7 +14,7 @@ class Invoice(Base):
     customer_name = Column(String)
 
     services = relationship(
-        "InvoiceService", back_populates="invoice", cascade="all delete-orphan"
+        "InvoiceService", back_populates="invoice", cascade="all, delete-orphan"
     )
 
     user_id = Column(
