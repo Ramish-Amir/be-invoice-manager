@@ -11,7 +11,7 @@ class Invoice(Base):
     created_at = Column(DateTime, default=datetime.utcnow)
     updated_at = Column(DateTime, default=datetime.utcnow, onupdate=datetime.utcnow)
     invoice_date = Column(DateTime, nullable=True)
-    customer_name = Column(String)
+    customer_name = Column(String, nullable=False)
 
     services = relationship(
         "InvoiceService", back_populates="invoice", cascade="all, delete-orphan"
